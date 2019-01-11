@@ -3,6 +3,7 @@
 # .gitconfig
 * name and password
 * vim as editor
+* git log alias `git lg` (https://coderwall.com/p/euwpig/a-better-git-log)
 # .tmux.conf
 * tmux use 256 colors
 * aggressive resizing

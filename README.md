@@ -1,7 +1,7 @@
 # .bashrc
 * vim as default editor
 # .gitconfig
-* name and password
+* name and email
 * vim as editor
 * git log alias `git lg` (https://coderwall.com/p/euwpig/a-better-git-log)
 # .tmux.conf

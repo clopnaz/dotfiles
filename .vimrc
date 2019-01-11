@@ -4,3 +4,9 @@ set hlsearch
 set foldcolumn=1
 " numbered lines
 set number
+" tab settings tab=2 spaces
+set tabstop=2
+set softtabstop=0
+set expandtab
+set shiftwidh=2
+

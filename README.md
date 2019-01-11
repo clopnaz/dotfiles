@@ -14,3 +14,4 @@
 * fold indicator 
 * numbered lines
 * 2 x space instead of tabs
+* autoindent

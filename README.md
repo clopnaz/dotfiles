@@ -9,9 +9,12 @@
 * aggressive resizing
 * long history 
 * arrows to change panes
+* rename-window (,) deletes old name
 # .vimrc
 * highlight search results
 * fold indicator 
 * numbered lines
 * 2 x space instead of tabs
 * autoindent
+# install.sh
+* moves all the dotfiles to $HOME

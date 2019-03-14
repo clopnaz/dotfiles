@@ -10,3 +10,9 @@ set softtabstop=0
 set expandtab
 set shiftwidth=2
 set autoindent
+
+" status line 
+set ls=2
+set ruler
+" wild menu
+set wildmenu

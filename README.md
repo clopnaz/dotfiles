@@ -1,3 +1,9 @@
+## INSTALL
+    git clone github.com/clopnaz/dotfiles
+    cd dotfiles
+    chmod +x install.sh
+    ./install.sh
+## CONTENTS
 # .bashrc
 * vim as default editor
 # .gitconfig

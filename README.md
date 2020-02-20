@@ -1,5 +1,5 @@
 ## INSTALL
-    git clone github.com/clopnaz/dotfiles
+    git clone https://github.com/clopnaz/dotfiles
     cd dotfiles
     chmod +x install.sh
     ./install.sh

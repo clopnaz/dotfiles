@@ -19,8 +19,18 @@
 # .vimrc
 * highlight search results
 * fold indicator 
+* folding in markdown
+* dynamic absolute/relative line numbers (credit: jeffkreeftmeijer.com)
 * numbered lines
-* 2 x space instead of tabs
 * autoindent
+* C-F5 prints a timestamp
+* vim-plugged
+  * vimwiki/vimwiki
+    * customization: open links in new tab 
+  * SirVer/ultisnips
+    * customization: shortcut is shift+tab
+  * tpope/vim-surround
+  * arcticicestudio/nord-vim
+  * chrisbra/recover.vim 
 # install.sh
 * moves all the dotfiles to $HOME

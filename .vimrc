@@ -93,11 +93,15 @@ endif
 " use :PlugInstall or :PlugUpdate to update
 call plug#begin()
     Plug 'vimwiki/vimwiki'
-    Plug 'SirVer/ultisnips'
-    Plug 'honza/VIM-SNIPPETS'
     Plug 'tpope/vim-surround'
     Plug 'arcticicestudio/nord-vim'
     Plug 'chrisbra/recover.vim'
+    Plug 'honza/vim-snippets'
+    if has('python3') 
+        Plug 'SirVer/ultisnips'
+    else
+        echoerr 'No python3, refusing to load ultisnips plugin'
+    endif
 call plug#end()
 filetype plugin on 
 

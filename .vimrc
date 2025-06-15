@@ -97,11 +97,13 @@ call plug#begin()
     Plug 'arcticicestudio/nord-vim'
     Plug 'chrisbra/recover.vim'
     Plug 'honza/vim-snippets'
-    if has('python3') 
-        Plug 'SirVer/ultisnips'
+    if has('python3')
+        " Plug 'SirVer/ultisnips'
     else
         echoerr 'No python3, refusing to load ultisnips plugin'
     endif
+    " Plug 'ycm-core/YouCompleteMe'
+    Plug 'davidhalter/jedi-vim'
 call plug#end()
 filetype plugin on 
 
@@ -115,7 +117,8 @@ autocmd Filetype vimwiki set shiftwidth=2
 autocmd Filetype markdown set shiftwidth=2
 autocmd Filetype vimwiki nmap <buffer> <CR> <Plug>VimwikiTabTDropLink
 " ===========================================
-
-
-
-
+autocmd Filetype python nmap <buffer> <f5> :compiler pylint<CR>:make %<CR>
+autocmd Filetype python nmap <buffer> <f6> :compiler mypy<CR>:make %<CR>
+set list
+" https://www.reddit.com/r/vim/comments/4hoa6e/what_do_you_use_for_your_listchars/
+set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·

@@ -1,4 +1,4 @@
-set nocompatible 
+set nocompatible
 " misc ========================================
 set hlsearch " highlight search results
 set encoding=utf-8 " set utf-8. `e % +enc` to disable
@@ -100,7 +100,7 @@ call plug#begin()
     if has('python3')
         " Plug 'SirVer/ultisnips'
     else
-        echoerr 'No python3, refusing to load ultisnips plugin'
+        echo 'No python3, refusing to load ultisnips plugin'
     endif
     " Plug 'ycm-core/YouCompleteMe'
     Plug 'davidhalter/jedi-vim'
@@ -122,3 +122,4 @@ autocmd Filetype python nmap <buffer> <f6> :compiler mypy<CR>:make %<CR>
 set list
 " https://www.reddit.com/r/vim/comments/4hoa6e/what_do_you_use_for_your_listchars/
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
+set backspace=nostart " this should be set by defaults.vim

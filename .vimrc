@@ -180,3 +180,6 @@ let g:ycm_autoclose_preview_window_after_insertion = 1 " i.e. after <esc>
 " let g:ycm_cache_omnifunc = 1
 map autocmd Filetype cpp map <leader>r RefactorRename
 map autocmd Filetype rust map <leader>r RefactorRename
+
+" toggle paste
+set pastetoggle=<leader>p

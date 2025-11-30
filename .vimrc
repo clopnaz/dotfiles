@@ -92,6 +92,10 @@ endif
 " use :PlugInstall or :PlugUpdate to update
 call plug#begin()
     Plug 'vimwiki/vimwiki'
+    Plug 'ycm-core/YouCompleteMe'
+    " Plug 'rust-lang/rust.vim'
+    " Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'npm ci'}
+    " Plug 'neoclide/coc-rls'
     Plug 'tpope/vim-surround'
     Plug 'arcticicestudio/nord-vim'
     Plug 'chrisbra/recover.vim'
@@ -101,7 +105,6 @@ call plug#begin()
     else
         echo 'No python3, refusing to load ultisnips plugin'
     endif
-    " Plug 'ycm-core/YouCompleteMe'
     Plug 'davidhalter/jedi-vim'
 call plug#end()
 filetype plugin on 
@@ -122,3 +125,58 @@ set list
 " https://www.reddit.com/r/vim/comments/4hoa6e/what_do_you_use_for_your_listchars/
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
 set backspace=nostart " this should be set by defaults.vim
+
+" set verbose=10
+" set verbosefile=verbose-vim.txt
+
+" c completion
+"set path+=C:\mingw\include
+
+" YouCompleteMe settings
+let g:ycm_auto_trigger=1
+let g:ycm_enable_semantic_highlighting=1
+let g:ycm_enable_inlay_hints=0
+let g:ycm_clear_inlay_hints_in_insert_mode=0
+nnoremap <silent> <localleader>p <Plug>(YCMToggleInlayHints)
+imap <leader>[ <Plug>(YCMToggleSignatureHelp)
+nmap <leader>] <plug>(YCMHover)
+let g:ycm_key_detailed_diagnostics = '<leader>q'
+let g:ycm_echo_current_diagnostic = 'virtual-text'
+let g:ycm_auto_hover=''
+let g:ycm_always_populate_location_list = 1
+let g:ycm_seed_identifiers_with_syntax = 1
+" preview is the top window
+" let g:ycm_add_preview_to_completeopt = 1 " I already have preview.
+" let g:ycm_filetype_whitelist = {'*': 1} " to get no-type, add 'ycm_nofiletype': 1
+" let g:ycm_filetype_blacklist " [ see doc ]
+" let g:ycm_filetype_specific_completion_to_disable = { 'gitcommit': 1}
+" let g:ycm_filepath_blacklist
+" let g:ycm_show_diagnostics_ui = 1
+" let g:ycm_error_symbol = '>>'
+" let g:ycm_warning_symbol = '>>'
+let g:ycm_enable_diagnostic_signs = 1
+let g:ycm_enable_diagnostic_highlighting = 0
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1 " i.e. after <esc>
+" let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
+" let g:ycm_key_list_previous_completion = ['<S-TAB>', '<Up>']
+" let g:ycm_key_invoke_completion = '<C-Space>'
+" let g:ycm_show_detailed_diag_in_popup = 0
+" let g:ycm_confirm_extra_conf = 1
+" let g:ycm_extra_conf_globlist = [] " ['~/dev/*','!~/*']
+" let g:ycm_semantic_triggers =  {
+"   \   'c': ['->', '.'],
+"   \   'objc': ['->', '.', 're!\[[_a-zA-Z]+\w*\s', 're!^\s*[^\W\d]\w*\s',
+"   \            're!\[.*\]\s'],
+"   \   'ocaml': ['.', '#'],
+"   \   'cpp,cuda,objcpp': ['->', '.', '::'],
+"   \   'perl': ['->'],
+"   \   'php': ['->', '::'],
+"   \   'cs,d,elixir,go,groovy,java,javascript,julia,perl6,python,scala,typescript,vb': ['.'],
+"   \   'ruby,rust': ['.', '::'],
+"   \   'lua': ['.', ':'],
+"   \   'erlang': [':'],
+"   \ }
+" let g:ycm_cache_omnifunc = 1
+map autocmd Filetype cpp map <leader>r RefactorRename
+map autocmd Filetype rust map <leader>r RefactorRename

@@ -15,7 +15,6 @@ set mouse= " alternatively, use shift key (see `:h mouse`)
 " =============================================
 
 " folding 
-set foldcolumn=1
 set foldmethod=indent
 " autocmd BufRead *.extension :set foldlevel=99 " for files I don't want folded on opening
 
@@ -53,13 +52,13 @@ au BufEnter *.md setlocal foldmethod=expr
   " vim-numbertoggle - Automatic toggling between 'hybrid' and absolute line numbers 
   " Maintainer:        <https://jeffkreeftmeijer.com> 
   " Version:           2.1.2 
-  augroup numbertoggle 
+  augroup numbertoggle
     autocmd!
     autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
     autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
   augroup END
-  :nnoremap <silent> <C-n> :set relativenumber!<CR> 
-  :nnoremap <silent> <C-s-n> :set nonu!<CR>:set nornu!<CR> 
+  :nnoremap <silent> <C-n> :set nu<CR>:set relativenumber!<CR>:set foldcolumn=1<CR>:set signcolumn=auto<CR>
+  :nnoremap <silent> <A-n> :set nonu<CR>:set nornu<CR>:set foldcolumn=0<CR>:set signcolumn=no<CR>
 
 
 " plugin stuff ==============================
